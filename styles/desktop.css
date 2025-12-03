@@ -16,20 +16,39 @@
     font-family:Calibri;
 }
 
-section {
-    padding: 60px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    gap: 30px;
+    padding: 40px 20px;
+  }
+  
+  section {
+    background: white;
+    border-radius: 15px;
+    padding: 40px 30px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  section:hover {
+    transform: translateY(-10px);
   }
   
   .section-histoire {
-    background-color: #f8f9f0;
+    border-top: 5px solid #27ae60;
   }
   
   .section-commander {
-    background-color: #ffffff;
+    border-top: 5px solid #e67e22;
   }
   
   .section-conseil {
-    background-color: #e8f5e9;
+    border-top: 5px solid #e74c3c;
   }
