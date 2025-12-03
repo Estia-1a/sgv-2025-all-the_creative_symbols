@@ -9,3 +9,27 @@
     font-family:Calibri;
 
 }
+
+#phrase_accroche{
+    position:relative;
+    text-align: left;
+    font-family:Calibri;
+}
+
+section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .section-histoire {
+    background-color: #f8f9f0;
+  }
+  
+  .section-commander {
+    background-color: #ffffff;
+  }
+  
+  .section-conseil {
+    background-color: #e8f5e9;
+  }
