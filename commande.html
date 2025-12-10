@@ -9,67 +9,21 @@
     <link rel="stylesheet" href="styles/mobile.css" media="screen and (max-width: 767px)"> 
     <title>Commandez</title>
 </head>
-
-<style>
-  .container {
-    display: flex;
-    gap: 1px;
-  }
-  .column {
-    flex: 2;
-    border: 2px solid #ccc;
-    padding: 50px;
-  }
-  h2 { margin-top: 0; }
-
-
-
-</style>
-
 <body>
-    <nav>
-        <div class="nav-container">
-            <!-- Logo à gauche -->
-            <div class="logo-section">
-              <img src="media/pictures/logo maraîcher.jpg" alt="logo" width="100" height="100">
-            </div>
-            
-            <!-- Menu entre le logo et le titre -->
-            <div class="nav-links">
-                <a href="index.html" class="nav-btn">Accueil</a>
-                <a href="histoire.html" class="nav-btn">Histoire</a>
-                <a href="commande.html" class="nav-btn">Commander</a>
-                <a href="conseil.html" class="nav-btn">Conseil</a>
-                <a href="Panier.html" class="nav-btn">Panier</a>
-            </div>
-            
-            <!-- Nom du site au centre -->
-            <div class="site-name">
-                <p>La Cueillette Fraîche</p>
-                <p>Vos légumes de saison, cultivés avec passion</p>
-            </div>
-        </div>
-    </nav>
     
 <div style="display: flex; justify-content: center; align-items: center; height: 10vh;">
     <h1>Fruits et Légumes</h1>
 </div>
-    
-<div class="container">
-  <div class="column">
+
     <h2>Fruits</h2>
     <ul>
-        <li>Pomme</li><img src="./media/pictures/pomme.webp" width="100"height="100">
-        <div>stock :N/A</div>
-        <li>Banane</li><img src="./media/pictures/banane.jpg" width="100"height="100">
-        stock :N/A</p>
-        <li>Orange</li><img src="./media/pictures/orange.webp" width="100"height="100">
-        stock :N/A</p>
-        <li>Fraise</li><img src="./media/pictures/fraise.webp" width="100"height="100">
-        stock :N/A</p>
-        <li>Raisin</li><img src="./media/pictures/raisin.webp" width="100"height="100">
-        stock :N/A</p>
-    </ul>
+        <img src="./media/pictures/pomme.webp" width="150"height="100">
+        <div class="product">
+          Pomme- 2.78€ 
+         <button class="btn" onclick="addToCart('Pomme', 1)">Ajouter</button>
+         <p>Quantité:1kg</p>
+        </div>
+        <br></br>
 
         <img src="./media/pictures/banane.jpg" width="150"height="100">
         <div class="product">
@@ -103,28 +57,78 @@
         </div>
         <br><br>
     </ul>
-    </div>
-    <div class="column">
+
     <h2>Légumes</h2>
     <ul>
-        <li>Carotte</li><img src="./media/pictures/carrote.webp" width="100"height="100">
-        stock :N/A</p>
-        <li>Tomate</li><img src="./media/pictures/tomate.jpg" width="100"height="100">
-        stock :N/A</p>
-        <li>Brocoli</li><img src="./media/pictures/brocoli.webp" width="100"height="100">
-        stock :N/A</p>
-        <li>Courgette</li><img src="./media/pictures/couregette.webp" width="100"height="100">
-        stock :N/A</p>
-        <li>Poivron</li><img src="./media/pictures/poivrons.jpg" width="100"height="100">
-        stock :N/A</p>
+       <img src="./media/pictures/carrote.webp" width="150"height="100">  
+       <div class="product">
+          Carrote- 1.66€ 
+         <button class="btn" onclick="addToCart('Carrote', 1)">Ajouter</button>
+         <p>Quantité:1kg</p>
+        </div>
+        <br></br>
+        
+        <img src="./media/pictures/tomate.jpg" width="150"height="100">
+        <div class="product">
+           Tomate- 3.29€ 
+         <button class="btn" onclick="addToCart('Tomate', 1)">Ajouter</button>
+         <p>Quantité:1kg</p>
+        </div>
+        <br></br>
+        
+        <img src="./media/pictures/brocoli.webp" width="150"height="100">
+        <div class="product">
+          Brocoli- 1.79€ 
+         <button class="btn" onclick="addToCart('Brocoli', 1)">Ajouter</button>
+         <p>Quantité:  unité</p>
+        </div>
+        <br></br>
+        
+        <img src="./media/pictures/couregette.webp" width="150"height="100">
+        <div class="product">
+          Courgette- 2.69€ 
+         <button class="btn" onclick="addToCart('Courgette', 1)">Ajouter</button>
+         <p>Quantité:1kg</p>
+        </div>
+        <br></br>
+
+       <img src="./media/pictures/poivrons.jpg" width="150"height="100">
+        <div class="product">
+          Poivrons- 3.99€ 
+         <button class="btn" onclick="addToCart('Poivrons', 1)">Ajouter</button>
+         <p>Quantité:1kg</p>
+        </div>
+        <br></br>
+       
     </ul>
-    </div>
 
     
 <div style="position: absolute; top: 2px; right: 10px;">
     
-    <a href="Panier.html">panier</a> 
+    
 </div>
+<div style="position: absolute; top: 2px; right: 10px;">
+ <div id="cart">
+   <h2>Panier</h2>
+   <ul id="cart-items"></ul>
+   <p>Total : <span id="cart-total">0</span> €</p>
+ </div>
+</div>
+
+<script>
+  let total = 0;
+
+  function addToCart(name, price) {
+    // Ajouter l'article dans la liste
+    const li = document.createElement('li');
+    li.textContent = name + ' - ' + price + '€';
+    document.getElementById('cart-items').appendChild(li);
+
+    // Mettre à jour le total
+    total += price;
+    document.getElementById('cart-total').textContent = total;
+  }
+</script>
 
 </body>
 </html>
