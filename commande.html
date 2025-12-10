@@ -9,12 +9,27 @@
     <link rel="stylesheet" href="styles/mobile.css" media="screen and (max-width: 767px)"> 
     <title>Commandez</title>
 </head>
-<body>
-    
+<body> 
+<style>
+  .container {
+    display: flex;
+    gap: 20px;
+  }
+  .column {
+    flex: 1;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  h2 { margin-top: 0; }
+</style>
+
 <div style="display: flex; justify-content: center; align-items: center; height: 10vh;">
     <h1>Fruits et Légumes</h1>
 </div>
 
+  <div class="container">
+  <!-- Colonne Fruits -->
+  <div class="column">
     <h2>Fruits</h2>
     <ul>
         <img src="./media/pictures/pomme.webp" width="150"height="100">
@@ -57,13 +72,14 @@
         </div>
         <br><br>
     </ul>
-
+    </div>
+     <div class="column">
     <h2>Légumes</h2>
     <ul>
        <img src="./media/pictures/carrote.webp" width="150"height="100">  
        <div class="product">
-          Carrote- 1.66€ 
-         <button class="btn" onclick="addToCart('Carrote', 1)">Ajouter</button>
+          Carotte- 1.66€ 
+         <button class="btn" onclick="addToCart('Carotte', 1)">Ajouter</button>
          <p>Quantité:1kg</p>
         </div>
         <br></br>
@@ -101,13 +117,14 @@
         <br></br>
        
     </ul>
+    </div>
 
     
 <div style="position: absolute; top: 2px; right: 10px;">
     
     
 </div>
-<div style="position: absolute; top: 2px; right: 10px;">
+<div class="footer">
  <div id="cart">
    <h2>Panier</h2>
    <ul id="cart-items"></ul>
