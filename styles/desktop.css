@@ -33,6 +33,7 @@ nav {
   max-width: 1500px;
   left: 2%;
   gap: 30px;
+  position: relative;
 }
 
 .logo-section {
