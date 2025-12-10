@@ -17,37 +17,98 @@
 
     <h2>Fruits</h2>
     <ul>
-        <li>Pomme</li><img src="./media/pictures/pomme.webp" width="100"height="100">
-        <div>stock :N/A</div>
-        <li>Banane</li><img src="./media/pictures/banane.jpg" width="100"height="100">
-        stock :N/A</p>
-        <li>Orange</li><img src="./media/pictures/orange.webp" width="100"height="100">
-        stock :N/A</p>
-        <li>Fraise</li><img src="./media/pictures/fraise.webp" width="100"height="100">
-        stock :N/A</p>
+        <div class="product">
+          Pomme- 1€ 
+         <button class="btn" onclick="addToCart('Pomme', 1)">Ajouter</button>
+        </div><img src="./media/pictures/pomme.webp" width="100"height="100">
+        <p>Quantité:1kg</p>
+        <div class="product">
+          Banane- 1€ 
+         <button class="btn" onclick="addToCart('Banane', 1)">Ajouter</button>
+        </div>
+        <img src="./media/pictures/banane.jpg" width="100"height="100">
+        <p>Quantité:1kg</p>
+        <div class="product">
+          Orange- 1€ 
+         <button class="btn" onclick="addToCart('Orange', 1)">Ajouter</button>
+        </div>
+        <img src="./media/pictures/orange.webp" width="100"height="100">
+        <p>Quantité:1kg</p>
+        <div class="product">
+          Fraise- 1€ 
+         <button class="btn" onclick="addToCart('Fraise', 1)">Ajouter</button>
+        </div>
+        <img src="./media/pictures/fraise.webp" width="100"height="100">
+        <p>Quantité:1kg</p>
+        <div class="product">
+          raisin- 1€ 
+         <button class="btn" onclick="addToCart('raisin', 1)">Ajouter</button>
+        </div>
         <li>Raisin</li><img src="./media/pictures/raisin.webp" width="100"height="100">
-        stock :N/A</p>
+       <p>Quantité:1kg</p>
     </ul>
 
     <h2>Légumes</h2>
     <ul>
-        <li>Carotte</li><img src="./media/pictures/carrote.webp" width="100"height="100">
-        stock :N/A</p>
-        <li>Tomate</li><img src="./media/pictures/tomate.jpg" width="100"height="100">
-        stock :N/A</p>
-        <li>Brocoli</li><img src="./media/pictures/brocoli.webp" width="100"height="100">
-        stock :N/A</p>
-        <li>Courgette</li><img src="./media/pictures/couregette.webp" width="100"height="100">
-        stock :N/A</p>
-        <li>Poivron</li><img src="./media/pictures/poivrons.jpg" width="100"height="100">
-        stock :N/A</p>
+        <div class="product">
+          Carrote- 1€ 
+         <button class="btn" onclick="addToCart('Carrote', 1)">Ajouter</button>
+        </div>
+        <img src="./media/pictures/carrote.webp" width="100"height="100">
+        <p>Quantité:1kg</p>
+        <div class="product">
+           Tomate- 1€ 
+         <button class="btn" onclick="addToCart('Tomate', 1)">Ajouter</button>
+        </div>
+        <img src="./media/pictures/tomate.jpg" width="100"height="100">
+        <p>Quantité:1kg</p>
+        <div class="product">
+          Brocoli- 1€ 
+         <button class="btn" onclick="addToCart('Brocoli', 1)">Ajouter</button>
+        </div>
+        <img src="./media/pictures/brocoli.webp" width="100"height="100">
+        <p>Quantité:1kg</p>
+        <div class="product">
+          Courgette- 1€ 
+         <button class="btn" onclick="addToCart('Courgette', 1)">Ajouter</button>
+        </div>
+        <img src="./media/pictures/couregette.webp" width="100"height="100">
+       <p>Quantité:1kg</p>
+        <div class="product">
+          Poivrons- 1€ 
+         <button class="btn" onclick="addToCart('Poivrons', 1)">Ajouter</button>
+        </div>
+        <img src="./media/pictures/poivrons.jpg" width="100"height="100">
+       <p>Quantité:1kg</p>
     </ul>
 
     
 <div style="position: absolute; top: 2px; right: 10px;">
     
-    <a href="Panier.html">panier</a> 
+    
 </div>
+<div style="position: absolute; top: 2px; right: 10px;">
+ <div id="cart">
+   <h2>Panier</h2>
+   <ul id="cart-items"></ul>
+   <p>Total : <span id="cart-total">0</span> €</p>
+ </div>
+</div>
+
+<script>
+  let total = 0;
+
+  function addToCart(name, price) {
+    // Ajouter l'article dans la liste
+    const li = document.createElement('li');
+    li.textContent = name + ' - ' + price + '€';
+    document.getElementById('cart-items').appendChild(li);
+
+    // Mettre à jour le total
+    total += price;
+    document.getElementById('cart-total').textContent = total;
+  }
+</script>
 
 </body>
 </html>
