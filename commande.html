@@ -9,12 +9,30 @@
     <link rel="stylesheet" href="styles/mobile.css" media="screen and (max-width: 767px)"> 
     <title>Commandez</title>
 </head>
+
+<style>
+  .container {
+    display: flex;
+    gap: 1px;
+  }
+  .column {
+    flex: 2;
+    border: 2px solid #ccc;
+    padding: 50px;
+  }
+  h2 { margin-top: 0; }
+
+
+
+</style>
+
 <body>
-    
 <div style="display: flex; justify-content: center; align-items: center; height: 10vh;">
     <h1>Fruits et Légumes</h1>
 </div>
-
+    
+<div class="container">
+  <div class="column">
     <h2>Fruits</h2>
     <ul>
         <img src="./media/pictures/pomme.webp" width="150"height="100">
@@ -57,7 +75,8 @@
         </div>
         <br><br>
     </ul>
-
+    </div>
+    <div class="column">
     <h2>Légumes</h2>
     <ul>
        <img src="./media/pictures/carrote.webp" width="150"height="100">  
@@ -101,6 +120,7 @@
         <br></br>
        
     </ul>
+    </div>
 
     
 <div style="position: absolute; top: 2px; right: 10px;">
